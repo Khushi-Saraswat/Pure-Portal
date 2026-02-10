@@ -48,5 +48,5 @@ It also supports **offline mode**, stores last fetched weather data, and uses **
 
 ---
 
-## 📂 Folder Structure (Example)
+
 
