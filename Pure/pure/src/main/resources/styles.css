@@ -1,0 +1,8 @@
+.my-button {
+    -fx-background-color: #00FF00;
+    -fx-text-fill: black;
+}
+
+#myPane {
+    -fx-background-color: lightblue;
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pure.PrimaryController"
+            prefHeight="700.0" prefWidth="1050.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #e8f0fe, #bbdefb);">
+
+    <children>
+
+        <!-- Header -->
+        <Label text="🌤 Today's Weather"
+               layoutX="370.0" layoutY="30.0"
+               style="-fx-font-size: 38px; -fx-font-weight: bold; -fx-text-fill: #0d47a1;"/>
+
+        <!-- Input Section Card -->
+        <VBox layoutX="100.0" layoutY="100.0"
+              spacing="30" alignment="CENTER_LEFT"
+              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8,0,0,4);"
+              prefWidth="850.0">
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+
+                <TextField fx:id="cityInput"
+                           promptText="🌆 Enter city name"
+                           prefWidth="250"
+                           style="-fx-font-size: 15px; -fx-background-radius: 8;"/>
+
+                <!-- Heart Icon (no event) -->
+                <ImageView fx:id="imgView"
+                           fitHeight="30" fitWidth="30"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/heart.png" />
+                    </image>
+                </ImageView>
+
+                <!-- Weather Button -->
+                <Button text="Weather"
+                        prefWidth="140"
+                        onAction="#getWeatherData"
+                        style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 10; -fx-font-size: 14px; -fx-font-weight: bold;" />
+
+                <!-- AI Insights Icon -->
+                <ImageView fx:id="Aiview"
+                           fitHeight="50" fitWidth="50"
+                           pickOnBounds="true" preserveRatio="true"
+                           onMouseClicked="#getInsights">
+                    <image>
+                        <Image url="@images/insight.png" />
+                    </image>
+                </ImageView>
+
+            </HBox>
+        </VBox>
+
+        <!-- Weather Info Card -->
+        <VBox layoutX="100.0" layoutY="300.0"
+              spacing="18" alignment="TOP_LEFT"
+              style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8,0,0,4);"
+              prefWidth="850.0" prefHeight="300.0">
+
+            <Text fx:id="weatherText"
+                  wrappingWidth="800"
+                  style="-fx-font-size: 22px; -fx-fill: #1a237e;"/>
+
+            <Text fx:id="AirText"
+                  wrappingWidth="800"
+                  style="-fx-font-size: 20px; -fx-fill: #004d40;"/>
+        </VBox>
+
+        <!-- Notification Area -->
+        <HBox layoutX="100.0" layoutY="640.0"
+              prefWidth="850.0" prefHeight="55.0"
+              alignment="CENTER_LEFT"
+              spacing="15"
+              style="-fx-background-color: #fff9c4; 
+                     -fx-background-radius: 25; 
+                     -fx-padding: 10 20 10 20; 
+                     -fx-border-color: #fbc02d; 
+                     -fx-border-radius: 25;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4,0,0,2);">
+
+            <ImageView fx:id="notificationIcon" 
+                       fitHeight="28.0" fitWidth="28.0">
+                <image>
+                    <Image url="@images/bell.png" />
+                </image>
+            </ImageView>
+
+            <Label fx:id="notificationLabel"
+                   text="🔔 Hey there! Weather updates will appear here."
+                   style="-fx-font-size: 15px; -fx-text-fill: #795548; -fx-font-weight: bold;"/>
+
+            <Text fx:id="weatherAlerts"
+                  wrappingWidth="800"
+                  style="-fx-font-size: 18px; -fx-fill: #1a237e;"/>
+        </HBox>
+
+    </children>
+</AnchorPane>
